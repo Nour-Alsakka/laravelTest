@@ -42,7 +42,7 @@
                         <div class="error text-danger">{{ $errors->first('password') }}</div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-secondary">Login</button>
+                <button type="submit" class="btn btn-secondary">signup</button>
             </div>
         </div>
     </form>

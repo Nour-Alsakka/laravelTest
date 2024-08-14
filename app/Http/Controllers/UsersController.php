@@ -25,7 +25,7 @@ class UsersController extends Controller
         Users::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => $request->password,
         ]);
 
         return redirect('/auth/login')->with('success', 'Registration successful! Please log in.');
@@ -38,12 +38,22 @@ class UsersController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        // $credentials = $request->only('email', 'password');
+        // if (Auth::attempt($credentials)) {
+        //     $request->session()->regenerate();
+        //     return redirect(route('site.index'));
+        // }
+        $user = Users::where('email', $request->email)->get()->first();
+        // return $user;
+        if ($user) {
+            if ($user->password == $request->password) {
+                $request->session()->regenerate();
+                return redirect(route('index'));
+            } else {
+                return 'wrong data';
+            }
+        } else return back()->with('error', 'Invalid email. Please try again.');
 
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
-        }
-
-        return redirect('/login')->with('error', 'Invalid credentials. Please try again.');
+        // return redirect('/login')->with('error', 'Invalid credentials. Please try again.');
     }
 }
