@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Categories;
+use Exception;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -12,7 +14,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Categories::get();
+
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -20,15 +24,29 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+
+        return  View('admin.categories.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+
+        try {
+
+            $check =  Categories::create([
+                'name' => $request->name,
+            ]);
+
+            if ($check) {
+                return back()->with('success', 'The Category has inserted successfully');
+            }
+        } catch (Exception $e) {
+
+            return back()->withErrors(['error' => 'something happend']);
+        }
     }
 
     /**
