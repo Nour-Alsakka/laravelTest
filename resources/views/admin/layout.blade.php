@@ -59,8 +59,17 @@
                     </div>
                 </a>
 
+
+                <a class="logout_link mx-4 text-start text-white" href="{{route('logout') }}">
+                    <div class="menu_item">
+                        <i class="fa-solid fa-arrow-right mx-2 text-white"></i>
+                        logout
+                    </div>
+                </a>
+
+
             </div>
-{{-- 
+{{--
             <div class="mx-4 text-start">
                 <a class="logout_link mx-4 text-start text-white" href="{{ route('logout') }}">
                     <div class="menu_item">

@@ -40,7 +40,7 @@ Route::get('/add_product/{id}', [SiteController::class, 'add_product'])->name('a
 // dashboard admin login
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'login_check'])->name('login_check');
-// Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 // dashboard routes
 Route::group([
