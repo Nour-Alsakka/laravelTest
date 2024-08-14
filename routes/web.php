@@ -5,14 +5,20 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/', [SiteController::class, 'index'])->name('index');
 
+Route::get('/auth/register', [UsersController::class, 'showRegistrationForm'])->name('showRegistrationForm');
+Route::post('/auth/register', [UsersController::class, 'register'])->name('register');
+Route::get('/auth/login', [UsersController::class, 'showLoginForm'])->name('showLoginForm');
+
+//////////////////////
+Route::get('/', [SiteController::class, 'index'])->name('index');
 Route::get('/details/{id}', [SiteController::class, 'details'])->name('details');
 Route::get('/category/{id}', [SiteController::class, 'category_products'])->name('category_products');
 

@@ -34,6 +34,9 @@
                             </a>
                         </li>
                     @endforeach
+                    
+                    <li class="nav-item mx-2" style="position:absolute;right:20px"><a class="text-black"
+                            href="{{ route('showRegistrationForm') }}">Signup</a></li>
                 </ul>
             </div>
 
@@ -50,4 +53,5 @@
 
 
 </body>
+
 </html>
