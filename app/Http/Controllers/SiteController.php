@@ -15,4 +15,13 @@ class SiteController extends Controller
 
         return view('site.index', compact('products', 'categories'));
     }
+
+    public function details(string $id)
+    {
+        $product = Products::get()->find($id);
+        $categories = Categories::get();
+
+
+        return view('site.details', compact('product', 'categories'));
+    }
 }
