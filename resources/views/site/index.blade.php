@@ -1,6 +1,12 @@
 @extends('site.layout')
-@section('main')
-    <div id="content" class="container" style="padding-top: 60px">
+@section('content')
+    <div id="content" class="container" style="padding-top: 68px">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="row p-0 m-0">
             <h2 class="text-center my-4">Welcome to our Store</h2>
             @foreach ($products as $product)

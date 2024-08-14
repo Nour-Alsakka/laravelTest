@@ -44,10 +44,10 @@ class UsersController extends Controller
         //     return redirect(route('site.index'));
         // }
         $user = Users::where('email', $request->email)->get()->first();
-        // return $user;
         if ($user) {
             if ($user->password == $request->password) {
                 $request->session()->regenerate();
+                // return $user;
                 return redirect(route('index'));
             } else {
                 return 'wrong data';

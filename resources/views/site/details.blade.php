@@ -1,5 +1,5 @@
 @extends('site.layout')
-@section('main')
+@section('content')
     <div class="container mb-4" style="padding-top: 76px">
         <img src="{{ url('storage/media/' . $product->image) }}" alt=""
             style="width:100%;height:70vh;object-fit:cover">

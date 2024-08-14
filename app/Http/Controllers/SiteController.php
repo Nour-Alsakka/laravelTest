@@ -29,9 +29,10 @@ class SiteController extends Controller
     {
 
         $categories = Categories::get();
+        $category = Categories::find($id);
         $category_products = Products::where('category_id', $id)->get();
         // return $category_products;
-        return view('site.category_products', compact('category_products', 'categories'));
+        return view('site.category_products', compact('category', 'category_products', 'categories'));
     }
 
     public function add_product(string $id) {}

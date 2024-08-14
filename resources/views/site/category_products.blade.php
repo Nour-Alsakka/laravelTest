@@ -1,5 +1,5 @@
 @extends('site.layout')
-@section('main')
+@section('content')
     <div class="container" style="padding-top: 100px">
 
         <h4 class="text-capitalize text-center">Product about {{ $category->name }}</h4>
