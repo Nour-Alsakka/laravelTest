@@ -33,4 +33,6 @@ class SiteController extends Controller
         // return $category_products;
         return view('site.category_products', compact('category_products', 'categories'));
     }
+
+    public function add_product(string $id) {}
 }

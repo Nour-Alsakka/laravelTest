@@ -24,7 +24,10 @@
         <div class="container ">
             <a class="navbar-brand mx-5" href="{{ url('/') }}"><img class="img-fluid " style="width: 50px"
                     src="{{ asset('images/logo.png') }}"></a>
-            <h5 style="background:#777;color:white;padding:4px">welcome {{ Auth::user()->name }}</h5>
+
+            <h5 style="background:#777;color:white;padding:4px">
+                welcome {{ Auth::user()->name }}
+            </h5>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">

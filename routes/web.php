@@ -23,6 +23,7 @@ Route::get('/', [SiteController::class, 'index'])->name('index');
 Route::get('/details/{id}', [SiteController::class, 'details'])->name('details');
 Route::get('/category/{id}', [SiteController::class, 'category_products'])->name('category_products');
 
+Route::get('/add_product/{id}', [SiteController::class, 'add_product'])->name('add_product');
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'login_check'])->name('login_check');

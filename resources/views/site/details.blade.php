@@ -11,5 +11,9 @@
         </div>
         <h2 class="mb-4">{{ $product->title }}</h2>
         <p> {{ $product->desc }}</p>
+        <form action="{{ url('add_product/' . $product->id) }}" method="post">
+
+            <button type="submit">add to cart</button>
+        </form>
     </div>
 @endsection
