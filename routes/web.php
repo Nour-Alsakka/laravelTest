@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductsController;
@@ -10,13 +11,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-// Route::get('login', [AuthController::class, 'login'])->name('login');
-// Route::post('login', [AuthController::class, 'login_check'])->name('login_check');
+Route::get('login', [AuthController::class, 'login'])->name('login');
+Route::post('login', [AuthController::class, 'login_check'])->name('login_check');
 // Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group([
     'prefix' => '/dashboard',
-    // 'middleware' => ['IsAdmin'],
+    'middleware' => ['IsAdmin'],
     'as' => 'dashboard.'
 ], function () {
 
