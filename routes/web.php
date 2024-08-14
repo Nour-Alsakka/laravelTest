@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SiteController::class, 'index'])->name('index');
 
 Route::get('/details/{id}', [SiteController::class, 'details'])->name('details');
+Route::get('/category/{id}', [SiteController::class, 'category_products'])->name('category_products');
 
 
 Route::get('login', [AuthController::class, 'login'])->name('login');

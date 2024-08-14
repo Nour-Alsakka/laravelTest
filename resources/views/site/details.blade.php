@@ -29,10 +29,9 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     @foreach ($categories as $category)
                         <li class="nav-item mx-2">
-                            {{-- <a class="nav-link active" aria-current="page"
-                                href="/category/{{ $category->id }}"> --}}
-                            {{ $category->name }}
-                            {{-- </a> --}}
+                            <a class="nav-link active" aria-current="page" href="/category/{{ $category->id }}">
+                                {{ $category->name }}
+                            </a>
                         </li>
                     @endforeach
                 </ul>
@@ -45,9 +44,6 @@
             </button>
         </div>
     </nav>
-
-
-
 
     <div class="container mb-4" style="padding-top: 76px">
         <img src="{{ url('storage/media/' . $product->image) }}" alt=""

@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>YEP Blog</title>
+    <title>YEP product</title>
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
@@ -45,10 +45,13 @@
         </div>
     </nav>
 
-    <div id="content" class="container" style="padding-top: 60px">
-        <div class="row p-0 m-0">
-            <h2 class="text-center my-4">Welcome to our Store</h2>
-            @foreach ($products as $product)
+
+
+    <div class="container" style="padding-top: 100px">
+
+        <h4 class="text-capitalize text-center">Product about {{ $category->name }}</h4>
+        <div class="row p-0 mb-3">
+            @foreach ($category_products as $product)
                 <div class="card col-4 p-2 m-2">
                     <img style="width:100%; height: 200px; object-fit: cover;margin-bottom:10px; border-radius: 10px"
                         src="{{ url('storage/media/' . $product->image) }}">
@@ -57,12 +60,16 @@
                             {{ $product->title }}
                         </a>
                     </h6>
-
+                    <span class="mx-4 " style="font-size: 12px;color:#777">
+                        added at: {{ $product->created_at }}
+                    </span>
                     {{-- <h5>{{ $product->title }}</h5> --}}
                 </div>
             @endforeach
         </div>
     </div>
+
+
 
 
 </body>
