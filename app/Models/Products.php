@@ -13,6 +13,6 @@ class Products extends Model
         'title',
         'desc',
         'image',
-        'author_id'
+        'category_id'
     ];
 }
